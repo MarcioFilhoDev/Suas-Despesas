@@ -1,56 +1,166 @@
-# Welcome to your Expo app 👋
+# 💰 Finance App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[🇧🇷 Leia este README em Português](README.pt-BR.md)
 
-## Get started
+A mobile application built with React Native and Expo, focused on personal finance management. The project features user authentication, session persistence, and expense management using Supabase as the backend.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 💡 Inspiration
 
-2. Start the app
+I developed this project to move away from using spreadsheets to track my personal expenses.
 
-   ```bash
-   npx expo start
-   ```
+Additionally, I sometimes handle transactions on behalf of other people, which means I need to keep track of who owes me money and how much they owe. Although the current version of the application does not support custom expense categories, this is a feature I plan to implement in the future.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📱 About the Project
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+The goal of this application is to provide a simple and practical way to manage personal finances, ensuring that each user can access only their own expense records.
 
-## Get a fresh project
+The application was built using modern technologies from the React Native ecosystem, following good practices in componentization, TypeScript typing, and form validation.
 
-When you're ready, run:
+---
+
+## 🚀 Features
+
+- ✅ User registration and authentication
+- ✅ Automatic user session persistence
+- ✅ Expense creation
+- ✅ Expense record retrieval
+- ✅ Expense deletion
+- ✅ Database integration with Supabase
+- ✅ Navigation between screens
+- ✅ Form validation
+
+---
+
+## 🛠️ Technologies Used
+
+### Mobile Frontend
+
+- React Native
+- Expo
+- TypeScript
+- Expo Router
+
+### Backend & Database
+
+- Supabase
+
+### Styling
+
+- NativeWind
+
+### Forms & Validation
+
+- React Hook Form
+- Zod
+
+### Navigation
+
+- Expo Router
+
+### Components & User Experience
+
+- Lucide React Native
+- React Native Calendars
+
+---
+
+## 📂 Project Structure
 
 ```bash
-npm run reset-project
+financas/
+└── src/
+    ├── app/
+    ├── components/
+    ├── config/
+    ├── hooks/
+    ├── services/
+    ├── screens/
+    ├── types/
+    └── ...
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+---
 
-### Other setup steps
+## ⚙️ Getting Started
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### 1. Clone the repository
 
-## Learn more
+```bash
+git clone <repository-url>
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 2. Install dependencies
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
 
-## Join the community
+### 3. Start the project
 
-Join our community of developers creating universal apps.
+```bash
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+To run on Android:
+
+```bash
+npx expo run:android
+```
+
+To run on iOS:
+
+```bash
+npx expo run:ios
+```
+
+---
+
+## 🔐 Supabase Configuration
+
+Create a `.env` file in the project root with the following environment variables:
+
+```env
+EXPO_PUBLIC_SUPABASE_URL=YOUR_URL
+EXPO_PUBLIC_SUPABASE_ANON_KEY=YOUR_KEY
+```
+
+---
+
+## 🗄️ Supabase Setup
+
+1. Enable email authentication in your Supabase project.
+2. Create a table to store user information.
+3. Create a database trigger to automatically insert a record into the users table whenever a new user registers.
+4. Create a table to store expense records.
+
+---
+
+## 🎯 Technical Goals
+
+This project was developed with a focus on:
+
+- Improving data typing with TypeScript
+- Practicing mobile application architecture
+- Integrating with an authenticated backend
+- Managing application state and forms
+- Implementing session persistence
+- Integrating with a database
+
+---
+
+## 📌 Future Improvements
+
+- [ ] Edit existing expenses
+- [ ] Add expense filters by date range and/or category
+- [ ] Support installment-based expenses
+- [ ] Display upcoming expenses
+
+---
+
+## 👨‍💻 Author
+
+Developed by Márcio Filho with ☕.
