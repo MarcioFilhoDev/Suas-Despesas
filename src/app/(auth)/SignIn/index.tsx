@@ -1,14 +1,21 @@
 import Button from "@/components/Button";
+import Input from "@/components/Input";
 import { Link } from "expo-router";
+import { CheckSquare, Eye, EyeOff, Square } from "lucide-react-native";
+import { useState } from "react";
 import {
   Keyboard,
+  Pressable,
   Text,
-  TextInput,
+  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
 
 export default function SignIn() {
+  const [passwordVisible, setPasswordVisible] = useState(true);
+  const [keepConnected, setKeepConnected] = useState(false);
+
   return (
     <TouchableWithoutFeedback
       onPress={() => Keyboard.dismiss()}
@@ -26,32 +33,39 @@ export default function SignIn() {
           </View>
 
           <View className="gap-5">
-            <View>
-              <Text className="mb-2 text-sm font-medium text-content-secondary">
-                E-mail
-              </Text>
-              <TextInput
-                className="h-14 rounded-xl border border-app-border bg-app-surface px-4 text-base text-content-primary"
-                placeholder="seu@email.com"
-                placeholderTextColor="#94a3b8"
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoComplete="email"
-              />
-            </View>
+            <Input
+              label="E-mail"
+              placeholder="seu@email.com"
+              keyboardType="email-address"
+            />
 
-            <View>
-              <Text className="mb-2 text-sm font-medium text-content-secondary">
-                Senha
-              </Text>
-              <TextInput
-                className="h-14 rounded-xl border border-app-border bg-app-surface px-4 text-base text-content-primary"
-                placeholder="Digite sua senha"
-                placeholderTextColor="#94a3b8"
-                secureTextEntry
-                autoComplete="password"
-              />
-            </View>
+            <Input
+              label="Senha"
+              placeholder="Digite sua senha"
+              keyboardType="default"
+              secureTextEntry={!passwordVisible}
+            >
+              <TouchableOpacity
+                className="px-2"
+                activeOpacity={0.7}
+                onPress={() => setPasswordVisible(!passwordVisible)}
+              >
+                {passwordVisible ? (
+                  <Eye size={20} color={"#949494"} />
+                ) : (
+                  <EyeOff size={20} color={"#949494"} />
+                )}
+              </TouchableOpacity>
+            </Input>
+
+            <Pressable
+              onPress={() => setKeepConnected(!keepConnected)}
+              className="flex flex-row gap-2 items-center ml-2"
+            >
+              {keepConnected ? <CheckSquare size={16} /> : <Square size={16} />}
+
+              <Text className="text-sm text-primary">Manter conectado</Text>
+            </Pressable>
 
             <Button label="Acessar" style="primary" onPress={() => {}} />
 
